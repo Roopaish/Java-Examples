@@ -1,3 +1,5 @@
+// Catching a divide by zero exception and Invalid input exception
+
 import java.util.Scanner;
 import java.util.InputMismatchException;
 

@@ -1,3 +1,6 @@
+// Catching CustomException in Java
+// Receive name and semester of a student and catch exception when semester is less than 0 or more than 8
+
 import java.util.Scanner;
 
 class SemException extends Exception {

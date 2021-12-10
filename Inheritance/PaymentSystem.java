@@ -1,3 +1,6 @@
+// Payment System: DebitCardPayment & PaypalPayment extending from Payment System
+// Bill amounts by buying items
+
 import java.util.Scanner;
 
 class Payment {

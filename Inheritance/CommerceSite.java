@@ -1,3 +1,5 @@
+// Product class with ProductImage
+
 class ProductImage {
   private String dimension;
   private String type;

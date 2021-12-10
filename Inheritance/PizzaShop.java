@@ -1,3 +1,8 @@
+// PizzaShop: DeluxePizza & StandardPizza
+// DeluxePizza: Pizza($200) & 3 extra Toppings($20 each) can be added
+// StandardPizza: Pizza($100) & no Toppings
+// Buy 5 get 1 free in any pizza
+
 import java.util.Scanner;
 
 class Pizza {

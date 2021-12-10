@@ -1,3 +1,5 @@
+// Catching exception when array index is out of bound
+
 import java.util.Scanner;
 
 public class ArrayIndexOutOfBound {
