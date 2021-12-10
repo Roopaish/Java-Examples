@@ -16,7 +16,7 @@ class DivideByZero {
       b = s.nextInt();
 
       int division = a / b;
-      System.out.println(a + " / " + "b" + " = " + division);
+      System.out.println(a + " / " + b + " = " + division);
     } catch (ArithmeticException e) {
       System.out.println("Error! " + e.getMessage());
     } catch (InputMismatchException e) {
