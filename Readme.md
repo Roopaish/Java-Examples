@@ -16,5 +16,5 @@ Java College stuffs
    - CopyFileFaster `BufferedInputStream & BufferedOutputStream`
    - StoreRecords `DataInputStream & DataOutputStream`
    - SerializationAndDeserialization `ByteStream <-> Object`
-   - ZipFile
+   - ZipFile `ZipOutputStream, ZipInputStream & ZipEntry`
 4. GUI

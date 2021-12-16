@@ -53,6 +53,7 @@ public class SerializationAndDeserialization {
           System.out.println("\nReading from file....");
           Person q = (Person) ois.readObject(); // ClassNotFoundException required
           q.showInfo();
+          break;
 
         case 3:
           System.out.println("\nExiting...");
