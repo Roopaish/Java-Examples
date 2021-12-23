@@ -39,7 +39,8 @@ class PieChartUI extends JFrame {
       // For gap between two segments
       g.fillRect(100, i, 10, 10);
       g.setColor(Color.white);
-      g.drawString(m.getKey().toString(), 120, i+10);
+      g.drawString(String.format("%.2f", (int) m.getValue() * 1.0 * 100 / max) + "%", 50, i + 10);
+      g.drawString(m.getKey().toString(), 120, i + 10);
       startAngle += (int) m.getValue() * 360 / max;
       i += 20;
     }
