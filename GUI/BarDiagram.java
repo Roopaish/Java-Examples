@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import java.util.*;
 
 class BarDiagramUI extends JFrame {
-  Map<String, Integer> map = new HashMap<String, Integer>();
+  Map<String, Integer> map = new LinkedHashMap<String, Integer>();
 
   public BarDiagramUI(Map<String, Integer> map) {
     this.map = map;
@@ -35,23 +35,23 @@ class BarDiagramUI extends JFrame {
 
     for (Map.Entry m : map.entrySet()) {
       g.setColor(getColor());
-      g.fillRect(i = i + 50, 100 + maxHeight * 5 - (int) m.getValue() * 5, 50, (int) m.getValue() * 5);
+      g.fillRect(i = i + 52, 100 + maxHeight * 5 - (int) m.getValue() * 5, 50, (int) m.getValue() * 5);
       g.setColor(Color.white);
-      g.drawString(m.getKey().toString(), i + 20, 80 + maxHeight * 5 - (int) m.getValue() * 5);
+      g.drawString(m.getKey().toString(), i, 90 + maxHeight * 5 - (int) m.getValue() * 5);
     }
   }
 }
 
 public class BarDiagram {
   public static void main(String[] args) {
-    Map<String, Integer> data = new HashMap<String, Integer>();
+    Map<String, Integer> data = new LinkedHashMap<String, Integer>();
     data.put("A", 10);
     data.put("B", 20);
-    data.put("C", 30);
+    data.put("C", 35);
     data.put("D", 40);
     data.put("E", 50);
-    data.put("Hello", 40);
-    data.put("oh no", 30);
+    data.put("F", 30);
+    data.put("G", 40);
 
 
     new BarDiagramUI(data);
