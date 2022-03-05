@@ -23,15 +23,29 @@ public class PieChart extends JFrame {
 
   @Override
   public void paint(Graphics g) {
-    int max = Arrays.stream(data).max().getAsInt();
-    int x = 10;
-    int h;
+    int total = 0;
     for (int i = 0; i < data.length; i++) {
-      h = height * data[i] / max;
-      g.setColor(colors[i]);
-      g.fillRect(x, height - h, 50, h);
-      x += 50;
+      total += data[i];
     }
 
+    int startAngle = 0, arcAngle;
+    for (int i = 0; i < data.length; i++) {
+      g.setColor(colors[i]);
+      arcAngle = (int) data[i] * 360 / total;
+      g.fillArc(100, 100, 200, 200, startAngle, arcAngle);
+      startAngle += arcAngle;
+      System.out.println(arcAngle);
+    }
+
+    // For BarDiagram
+    // int max = Arrays.stream(data).max().getAsInt();
+    // int x = 10;
+    // int h;
+    // for (int i = 0; i < data.length; i++) {
+    // h = height * data[i] / max;
+    // g.setColor(colors[i]);
+    // g.fillRect(x, height - h, 50, h);
+    // x += 50;
+    // }
   }
 }
