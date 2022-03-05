@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.event.*;
 import java.awt.*;
 
 class GUI extends JFrame {

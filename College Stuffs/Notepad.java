@@ -23,7 +23,7 @@ class GUI extends JFrame {
     close = new JMenuItem("Close");
     file.add(save);
     file.add(close);
-k
+
     copy = new JMenuItem("Cut");
     copy = new JMenuItem("Copy");
     paste = new JMenuItem("Paste");
