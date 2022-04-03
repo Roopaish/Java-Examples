@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthEditorPaneUI;
-
 public class TCPClient {
   public static void main(String[] args) throws IOException {
     Socket s = new Socket("localhost", 8080);

@@ -1,7 +1,5 @@
-
 import java.net.DatagramSocket;
 import java.net.DatagramPacket;
-import java.net.InetAddress;
 
 public class UDPServer {
   public static void main(String[] args) throws Exception {
