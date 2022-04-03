@@ -19,18 +19,18 @@ public class AppletToApp extends JFrame {
   // String msg = "";
 
   // public void init() {
-  // msg = "Hello";
+  //  msg = "Hello";
   // }
 
   // public void start() {
-  // msg = msg + " World!";
+  //  msg = msg + " World!";
   // }
 
   // public void paint(Graphics g) {
-  // g.drawString(msg, 50, 50);
+  //  g.drawString(msg, 50, 50);
   // }
 
-  // public void paint(Graphics g) {
-  // g.drawString("Hello World!", 50, 50);
-  // }
+  public void paint(Graphics g) {
+    g.drawString("Hello World!", 50, 50);
+  }
 }
