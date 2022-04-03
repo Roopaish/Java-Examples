@@ -1,30 +1,38 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-class GUI extends JFrame {
+class GUI extends JFrame implements ActionListener {
   JMenu file, edit;
   JMenuBar bar;
-  JMenuItem save, close, copy, cut, paste, select_all;
+  JMenuItem save, open, copy, cut, paste, select_all;
   JTextArea ta;
 
   public GUI() {
     setSize(500, 500);
     setVisible(true);
-    setLayout(new FlowLayout());
+    setLayout(new FlowLayout(FlowLayout.CENTER));
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    bar = new JMenuBar();
 
+    bar = new JMenuBar();
+    setJMenuBar(bar);
+
+    // File Save and Open
     file = new JMenu("File");
-    edit = new JMenu("Edit");
     bar.add(file);
-    bar.add(bar);
 
     save = new JMenuItem("Save");
-    close = new JMenuItem("Close");
+    open = new JMenuItem("Open");
     file.add(save);
-    file.add(close);
+    file.add(open);
 
-    copy = new JMenuItem("Cut");
+    save.addActionListener(this);
+    open.addActionListener(this);
+
+    // Edit File
+    edit = new JMenu("Edit");
+    bar.add(edit);
+    cut = new JMenuItem("Cut");
     copy = new JMenuItem("Copy");
     paste = new JMenuItem("Paste");
     select_all = new JMenuItem("Select All");
@@ -33,11 +41,33 @@ class GUI extends JFrame {
     edit.add(paste);
     edit.add(select_all);
 
-    ta = new JTextArea();
-    ta.setBounds(200, 200, 600, 500);
-    add(ta);
+    cut.addActionListener(this);
+    copy.addActionListener(this);
+    paste.addActionListener(this);
+    select_all.addActionListener(this);
 
-    add(bar);
+    // File editor
+    ta = new JTextArea("", getHeight() / 10, getWidth() / 10);
+    add(ta);
+  }
+
+  @Override
+  public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == cut) {
+      ta.cut();
+    } else if (e.getSource() == copy) {
+      ta.copy();
+    } else if (e.getSource() == select_all) {
+      ta.selectAll();
+    } else if (e.getSource() == paste) {
+      ta.paste();
+    } else if (e.getSource() == save) {
+      // save the file in system
+
+    } else if (e.getSource() == open) {
+      // open the file from system
+
+    }
   }
 }
 
