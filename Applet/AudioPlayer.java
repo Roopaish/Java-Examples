@@ -12,9 +12,6 @@ public class AudioPlayer extends Applet implements ActionListener {
   public void init() {
     System.out.println("Initializing...");
     audio = getAudioClip(getDocumentBase(), "audio.au");
-    setSize(500, 500);
-    setLayout(new FlowLayout());
-    setVisible(true);
 
     play = new Button("Play");
     stop = new Button("Stop");
