@@ -22,7 +22,7 @@ class TCPServer {
     // Square the number
     dos.writeUTF("Enter a number to find its square: ");
     int n = dis.readInt();
-    System.out.println("The square of " + n + " is " + n * n);
+    dos.writeUTF("The square of " + n + " is " + n * n);
 
     dis.close();
     dos.close();

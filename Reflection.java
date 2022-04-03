@@ -49,10 +49,7 @@ class Reflection {
     for (Method m : methods) {
       System.out.println(" ");
       System.out.println("Method Name: " + m.getName());
-
-      modifier = m.getModifiers();
-      System.out.println("Modifier: " + Modifier.toString(modifier));
-
+      System.out.println("Modifier: " + Modifier.toString(m.getModifiers()));
       System.out.println("Return Types: " + m.getReturnType());
     }
   }
