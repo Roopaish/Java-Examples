@@ -26,21 +26,25 @@ class PieChartUI extends JFrame {
 
   @Override
   public void paint(Graphics g) {
-    int i = 100, max = 0, startAngle = 0, startArc = 0;
+    int i = 100, max = 0, startAngle = 0, arcAngle = 0;
 
     for (Map.Entry m : map.entrySet()) {
       max += (int) m.getValue();
     }
 
     for (Map.Entry m : map.entrySet()) {
-      startArc = (int) m.getValue() * 360 / max;
+      // PieChart only
+      arcAngle = (int) m.getValue() * 360 / max;
       g.setColor(getColor());
-      g.fillArc(200, 200, 200, 200, startAngle, startArc);
+      g.fillArc(200, 200, 200, 200, startAngle, arcAngle);
+      startAngle += arcAngle;
+
+      // Some Extra Stuffs for labelling
       g.fillRect(100, i, 10, 10);
       g.setColor(Color.white);
       g.drawString(String.format("%.2f", (int) m.getValue() * 1.0 * 100 / max) + "%", 50, i + 10);
       g.drawString(m.getKey().toString(), 120, i + 10);
-      startAngle += (int) m.getValue() * 360 / max;
+
       i += 20;
     }
   }

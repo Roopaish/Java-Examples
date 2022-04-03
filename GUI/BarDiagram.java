@@ -26,7 +26,7 @@ class BarDiagramUI extends JFrame {
 
   @Override
   public void paint(Graphics g) {
-    int i = 0, maxHeight = 0;
+    int x = 52, y, maxHeight = 0, width = 50, height;
 
     for (Map.Entry m : map.entrySet()) {
       if (maxHeight < (int) m.getValue())
@@ -34,10 +34,17 @@ class BarDiagramUI extends JFrame {
     }
 
     for (Map.Entry m : map.entrySet()) {
+      // Bar diagram
+      height = (int) m.getValue() * 5;
+      y = 100 + maxHeight * 5 - height;
       g.setColor(getColor());
-      g.fillRect(i = i + 52, 100 + maxHeight * 5 - (int) m.getValue() * 5, 50, (int) m.getValue() * 5);
+      g.fillRect(x, y, width, height);
+
+      // Labeling
       g.setColor(Color.white);
-      g.drawString(m.getKey().toString(), i, 90 + maxHeight * 5 - (int) m.getValue() * 5);
+      g.drawString(m.getKey().toString(), x, 90 + maxHeight * 5 - height);
+
+      x += 52;
     }
   }
 }
@@ -51,8 +58,6 @@ public class BarDiagram {
     data.put("D", 40);
     data.put("E", 50);
     data.put("F", 30);
-    data.put("G", 40);
-
 
     new BarDiagramUI(data);
   }

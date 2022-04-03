@@ -7,8 +7,10 @@ import java.awt.Color;
 class GUI extends JFrame implements MouseMotionListener {
   public GUI() {
     setTitle("Painter with Java");
+    setSize(500, 500);
     addMouseMotionListener(this);
     setVisible(true);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLayout(null);
   }
 
@@ -16,7 +18,7 @@ class GUI extends JFrame implements MouseMotionListener {
   public void mouseDragged(MouseEvent e) {
     Graphics g = getGraphics();
     g.setColor(Color.blue);
-    g.fillOval(e.getX(), e.getY(), 2, 2);
+    g.fillOval(e.getX(), e.getY(), 10, 10);
   }
 
   @Override
