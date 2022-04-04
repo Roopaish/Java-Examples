@@ -1,3 +1,14 @@
+/*
+  Table: Students
+  +----+-------+--------+
+  | Id | Name  |   Age  |
+  +----+-------+--------+
+  |  1 | Raimy |   28   |
+  |  2 | Sam   |   22   |
+  |  3 | colt  |   20   |
+  +----+-------+--------+
+*/
+
 import java.io.*;
 import java.sql.*;
 
